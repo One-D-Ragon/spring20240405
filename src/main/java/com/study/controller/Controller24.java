@@ -76,6 +76,9 @@ public class Controller24 {
         model.addAttribute("customers", list);
     }
 
+    // todo : 세번째 메소드를 만들어서
+    //  고객이 있는 나라들을 중복없이 조회 후 jsp에서 출력
+    //  SELECT DISTINCT Country FROM Customers
     @GetMapping("sub3")
     public void method3(Model model) throws Exception {
         var list = new ArrayList<String>();
@@ -83,19 +86,18 @@ public class Controller24 {
                 SELECT DISTINCT Country FROM Customers
                 """;
 
-        Connection con = dataSource.getConnection();
-        Statement stmt = con.createStatement();
+        //Connection con = dataSource.getConnection();
+        //Statement stmt = con.createStatement();
+        Statement stmt = dataSource.getConnection().createStatement();
         ResultSet rs = stmt.executeQuery(sql);
 
-        try (con; stmt; rs) {
+        try (/*con;*/ stmt; rs) {
             while (rs.next()) {
-                String country = rs.getString(1);
-                list.add(country);
+                //String country = rs.getString(1);
+                //list.add(country);
+                list.add(rs.getString(1));
             }
         }
         model.addAttribute("countries", list);
     }
-    // todo : 세번째 메소드를 만들어서
-    //  고객이 있는 나라들을 중복없이 조회 후 jsp에서 출력
-    //  SELECT DISTINCT Country FROM Customers
 }
