@@ -59,6 +59,10 @@ LIMIT 5;
 
 SELECT *
 FROM Products
+ORDER BY Price;
+
+SELECT *
+FROM Products
 ORDER BY Price
 LIMIT 0, 5;
 
