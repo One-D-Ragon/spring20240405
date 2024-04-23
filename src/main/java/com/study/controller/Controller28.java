@@ -55,7 +55,6 @@ public class Controller28 {
     }
 
     // todo : 새 직원 입력하기
-
     @GetMapping("sub2")
     public void sub3() {
     }
@@ -81,6 +80,8 @@ public class Controller28 {
             int rowCount = pstmt.executeUpdate();
             if (rowCount == 1) {
                 rttr.addFlashAttribute("message", "등록 완료");
+            } else {
+                rttr.addFlashAttribute("message", "문제가 발생하였습니다.");
             }
         }
 

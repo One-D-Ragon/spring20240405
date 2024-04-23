@@ -24,7 +24,7 @@
     </div>
     <div>
         Birth Date
-        <input type="text" name="birthDate">
+        <input type="date" name="birthDate">
     </div>
     <div>
         Photo
@@ -32,10 +32,10 @@
     </div>
     <div>
         Notes
-        <input type="text" name="notes">
+        <textarea name="notes" id="" cols="30" rows="10"></textarea>
     </div>
     <div>
-        <input type="submit" value="조회">
+        <input type="submit" value="등록">
     </div>
 </form>
 
