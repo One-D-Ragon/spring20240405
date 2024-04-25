@@ -71,4 +71,5 @@ public interface Mapper03 {
                 CustomerId = #{id}
             """)
     int updateCustomer(MyBean254Customer customer);
+    // 프로퍼티를 이용해서 값을 셋팅해준다
 }

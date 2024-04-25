@@ -25,6 +25,7 @@
         <div>
             name
             <input type="text" value="${customer.name}" name="name">
+                <%--input 엘리먼트에 name값을 주면 payload에 name값을 넘긴다--%>
         </div>
         <div>
             contact name

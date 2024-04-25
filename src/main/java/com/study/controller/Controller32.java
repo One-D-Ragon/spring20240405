@@ -98,10 +98,14 @@ public class Controller32 {
     }
 
     // todo; 고객 조회 후 수정
+    // /main32/sub7
+    // /main32/sub7?id=3
     @GetMapping("sub7")
     public void method8(@RequestParam(value = "id", required = false) Integer cid, Model model) {
         if (cid != null) {
             MyBean254Customer c = mapper02.selectOneCustomer4(cid);
+            // 이전에는 직접 작성했지만 mybatis를 배운후에는 mybatis에게 일을 시킴
+
             model.addAttribute("customer", c);
         }
     }
@@ -116,7 +120,7 @@ public class Controller32 {
             rttr.addFlashAttribute("message", "수정되지 않았습니다.");
         }
 
-        rttr.addAttribute("id", customer.getId());
-        return "redirect:/main32/sub7";
+        rttr.addAttribute("id", customer.getId()); // 2번째 요청에 쿼리스트링이 붙음
+        return "redirect:/main32/sub7"; // 브라우저의 f12에서 update의 Response Header의 302응답은 리다이렉트 응답
     }
 }
