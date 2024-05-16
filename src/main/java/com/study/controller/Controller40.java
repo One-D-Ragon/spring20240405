@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Arrays;
+
 @Controller
 public class Controller40 {
 
@@ -48,4 +50,21 @@ public class Controller40 {
     }
 
     // /api/someurl4, get/post 요청처리메소드 작성
+    @GetMapping("/api/someurl4")
+    public void method7(@RequestParam("name") String name,
+                        @RequestParam("menu") String menu,
+                        @RequestParam("price") Integer price) {
+        System.out.println("name = " + name);
+        System.out.println("menu = " + menu);
+        System.out.println("price = " + price);
+    }
+
+    @PostMapping("/api/someurl4")
+    public void method8(@RequestParam("name") String name,
+                        @RequestParam("menu") String[] menu,
+                        @RequestParam("price") Integer price) {
+        System.out.println("name = " + name);
+        System.out.println("Arrays.toString(menu) = " + Arrays.toString(menu));
+        System.out.println("price = " + price);
+    }
 }
