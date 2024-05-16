@@ -6,4 +6,5 @@ import lombok.Data;
 public class MyBean411 {
     private String name;
     private Integer age;
+    private String country;
 }
