@@ -1,5 +1,6 @@
 package com.study.controller;
 
+import com.study.domain.MyBean411;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,6 +58,16 @@ public class Controller42 {
                 "info", Map.of("food1", "버섯",
                         "food2", "불고기"),
                 "item", List.of("소세지", "깍두기", "쌈장"));
+    }
 
+    @GetMapping("sub5")
+    @ResponseBody
+    public MyBean411 method5() {
+        MyBean411 obj = new MyBean411();
+        obj.setName("이강인");
+        obj.setAge(55);
+
+        // json으로 직렬화 할 때 프로퍼티는 get 메소드에 의해 결정된다
+        return obj; // json으로 직렬화
     }
 }
